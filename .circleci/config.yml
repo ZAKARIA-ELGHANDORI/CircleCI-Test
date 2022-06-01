@@ -10,7 +10,7 @@ jobs:
           environment:
             MYSQL_DATABASE: "APP1"
             MYSQL_ROOT_PASSWORD: "root"
-    step:
+    steps:
       - checkout
       - run:
           name: Install Maria DB
