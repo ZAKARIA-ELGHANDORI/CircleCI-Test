@@ -27,8 +27,8 @@ jobs:
             php -v
             php composer.phar --version
       - run:
-          name: update composer
-          command: update composer
+          name: update project dependencies
+          command: php composer.phar updatel
       - run:
           name: Install project dependencies
           command: php composer.phar install
