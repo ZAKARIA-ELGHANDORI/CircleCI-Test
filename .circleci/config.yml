@@ -38,9 +38,9 @@ jobs:
       # - run: 
       #    name: C2
       #    command: docker-php-ext-install zip
-      - run: 
-         name: pdo drivers sqlite
-         command:  apt-get install php-sqlite3
+      # - run: 
+      #    name: pdo drivers sqlite
+      #    command:  apt-get install php-sqlite3
       # - run: 
       #     name: enable pdo sqlite
       #     command: docker-php-ext-enable pdo_sqlite3
