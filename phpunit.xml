@@ -1,25 +1,25 @@
 <phpunit  colors="true">
         <testsuite name="Test1">
-            <directory>./TEST</directory>
-              <!-- <file>./TEST/mainTest.php</file> -->
+            <directory>./TEST2</directory>
+              <file>./TEST2/mainTest.php</file>
         </testsuite>
          <testsuite name="Test2">
-          <directory>./TEST</directory>
-            <file>./TEST/Connection.php</file>
+          <directory>./TEST2</directory>
+            <file>./TEST2/Connection.php</file>
         </testsuite>
         <testsuite name="Test3">
-            <directory>./TEST</directory>
-            <file>./TEST/Verification.php</file>
+            <directory>./TEST2</directory>
+            <file>./TEST2/Verification.php</file>
         </testsuite>
   <filter>
   <whitelist processUncoveredFilesFromWhitelist="true">
-    <directory suffix=".php">./TEST</directory>      
+    <directory suffix=".php">./TEST2</directory>      
   </whitelist>
 </filter>
 
     <coverage processUncoveredFilesFromWhitelist="true">
     <include>
-        <directory suffix=".php">./TEST</directory>
+        <directory suffix=".php">./TEST2</directory>
     </include>
    </coverage>
   

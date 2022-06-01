@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"mainTest::test":0.07,"Connection::testconnectionestablish":0.037,"Verification::testVerification":0.008}}
+{"version":1,"defects":[],"times":{"mainTest::test":0.038,"Connection::testconnectionestablish":0.086,"Verification::testVerification":0.006}}
