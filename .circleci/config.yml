@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: Circleci
+    working_directory: ~/circleci 
     docker:
       - image: php:7.3-apache
         environment:
