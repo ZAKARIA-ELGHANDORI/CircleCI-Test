@@ -40,10 +40,10 @@ jobs:
          command: docker-php-ext-install zip
       - run: 
          name: pdo drivers sqlite
-         command: docker-php-ext-install pdo_sqlite
+         command: docker-php-ext-install pdo_sqlite3
       - run: 
           name: enable pdo sqlite
-          command: docker-php-ext-enable pdo_sqlite
+          command: docker-php-ext-enable pdo_sqlite3
       - run:
           name: Run Unit tests
           command: php vendor/bin/phpunit
