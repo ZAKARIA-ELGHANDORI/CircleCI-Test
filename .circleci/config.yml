@@ -11,25 +11,24 @@ jobs:
             MYSQL_DATABASE: "APP1"
             MYSQL_ROOT_PASSWORD: "root"
     steps:
-      - checkout
       - run:
           name: Install Maria DB
           command: apt-get install -y mariadb-server-10.1 mariadb-server-core-10.1 mariadb-client-10.1 mariadb-client-core-10.1
       - run:
-        name: Initializing Mysql
-        command: service mysql status || service mysql restart; 
+          name: Initializing Mysql
+          command: service mysql status || service mysql restart; 
       - run:
-        name: Set password
-        command: mysql -u root -e "USE mysql; UPDATE user SET password=PASSWORD('root') WHERE User='root';FLUSH PRIVILEGES;"
+          name: Set password
+          command: mysql -u root -e "USE mysql; UPDATE user SET password=PASSWORD('root') WHERE User='root';FLUSH PRIVILEGES;"
       - run:
-        name: Check settings
-        command: mysql -u root -proot -e "USE mysql; UPDATE user SET plugin='mysql_native_password' WHERE User='root'; SELECT User, Host, plugin FROM mysql.user WHERE user = 'root';grant all privileges on *.* to root@'127.0.0.1' identified by 'root';FLUSH PRIVILEGES; SELECT host FROM user WHERE user = 'root';SELECT @@port;SELECT @@hostname;"
+          name: Check settings
+          command: mysql -u root -proot -e "USE mysql; UPDATE user SET plugin='mysql_native_password' WHERE User='root'; SELECT User, Host, plugin FROM mysql.user WHERE user = 'root';grant all privileges on *.* to root@'127.0.0.1' identified by 'root';FLUSH PRIVILEGES; SELECT host FROM user WHERE user = 'root';SELECT @@port;SELECT @@hostname;"
       - run:
-        name: Restarting Mysql
-        command: ' service mysql status || service mysql restart; '
+          name: Restarting Mysql
+          command: ' service mysql status || service mysql restart; '
       - run:
-        name: Create Mysql database and show current databases
-        command: mysql -uroot -proot -e "create database APP1;SHOW DATABASES"
+          name: Create Mysql database and show current databases
+          command: mysql -uroot -proot -e "create database APP1;SHOW DATABASES"
 
       # - run: |
           
