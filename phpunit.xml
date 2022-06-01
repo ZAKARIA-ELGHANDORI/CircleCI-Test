@@ -4,7 +4,7 @@
               <!-- <file>./TEST/mainTest.php</file> -->
         </testsuite>
          <testsuite name="Test2">
-            <directory>./TEST</directory>
+          <directory>./TEST</directory>
             <file>./TEST/Connection.php</file>
         </testsuite>
         <testsuite name="Test3">
