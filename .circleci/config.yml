@@ -7,6 +7,9 @@ jobs:
         environment:
           APP_ENV: test
     steps:
+      - run: 
+          name: php mysql
+          command: apt-get install php7.3-mysql
       - run:
           name: Install system packages
           command: apt-get update && apt-get -y install git
@@ -36,3 +39,4 @@ jobs:
       - run:
           name: Run Unit tests
           command: php vendor/bin/phpunit
+ 
