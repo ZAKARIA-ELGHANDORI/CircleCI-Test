@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
-    working_directory: Circleci
+    working_directory: ~/circleci 
     docker:
-      - image: php:7.1-apache
+      - image: php:7.3-apache
         environment:
           APP_ENV: test
     steps:
@@ -27,8 +27,11 @@ jobs:
             php -v
             php composer.phar --version
       - run:
+          name: update project dependencies
+          command: php composer.phar update
+      - run:
           name: Install project dependencies
           command: php composer.phar install
       - run:
           name: Run Unit tests
-          command: vendor/bin/phpunit
+          command: php vendor/bin/phpunit
