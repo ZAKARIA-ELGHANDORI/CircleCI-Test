@@ -32,18 +32,7 @@ jobs:
       - run:
           name: Install project dependencies
           command: php composer.phar install
-      # - run:
-      #    name: C1
-      #    command: apt update && apt install zlib1g-dev libsqlite3-dev  
-      # - run: 
-      #    name: C2
-      #    command: docker-php-ext-install zip
-      # - run: 
-      #    name: pdo drivers sqlite
-      #    command:  apt-get install php-sqlite3
-      # - run: 
-      #     name: enable pdo sqlite
-      #     command: docker-php-ext-enable pdo_sqlite3
+ 
       - run:
           name: Run Unit tests
           command: php vendor/bin/phpunit
