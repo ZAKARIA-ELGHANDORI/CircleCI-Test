@@ -32,6 +32,12 @@ jobs:
       - run:
           name: Install project dependencies
           command: php composer.phar install
+      - run: 
+         name: pdo drivers sqlite
+         command: sudo docker-php-ext-install pdo_sqlite
+      - run: 
+          name: enable pdo sqlite
+          command: sudo docker-php-ext-enable pdo_sqlite
       - run:
           name: Run Unit tests
           command: php vendor/bin/phpunit
