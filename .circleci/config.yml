@@ -37,5 +37,5 @@ jobs:
  
       - run:
           name: Run Unit tests
-          command: php vendor/bin/phpunit
+          command: php vendor/bin/phpunit ./TEST2/mainTest.php
  
