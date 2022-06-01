@@ -1,8 +1,7 @@
 <phpunit  colors="true">
-    <testsuites>
         <testsuite name="Test1">
             <directory>./TEST</directory>
-              <file>./TEST/mainTest.php</file>
+              <!-- <file>./TEST/mainTest.php</file> -->
         </testsuite>
          <testsuite name="Test2">
             <directory>./TEST</directory>
@@ -12,23 +11,15 @@
             <directory>./TEST</directory>
             <file>./TEST/Verification.php</file>
         </testsuite>
-    </testsuites>
   <filter>
   <whitelist processUncoveredFilesFromWhitelist="true">
-    <directory suffix=".php">./TEST</directory>
-      <file>./TEST/Connection.php</file>
-      <file>./TEST/mainTest.php</file>
-      <file>./TEST/Verification.php</file>
-           
+    <directory suffix=".php">./TEST</directory>      
   </whitelist>
 </filter>
 
     <coverage processUncoveredFilesFromWhitelist="true">
     <include>
         <directory suffix=".php">./TEST</directory>
-          <file>./TEST/Connection.php</file>
-           <file>./TEST/mainTest.php</file>
-            <file>./TEST/Verification.php</file>
     </include>
    </coverage>
   
