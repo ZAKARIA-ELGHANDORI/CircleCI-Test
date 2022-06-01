@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="3" assertions="10" errors="0" warnings="0" failures="0" skipped="0" time="3.872833">
+    <testsuite name="Test1" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.024065">
+      <testsuite name="mainTest" file="C:\Users\zakar\OneDrive\Desktop\LST-GI\TEST1\TEST\mainTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.024065">
+        <testcase name="test" class="mainTest" classname="mainTest" file="C:\Users\zakar\OneDrive\Desktop\LST-GI\TEST1\TEST\mainTest.php" line="8" assertions="1" time="0.024065"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Test2" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="3.023709">
+      <testsuite name="Connection" file="C:\Users\zakar\OneDrive\Desktop\LST-GI\TEST1\TEST\Connection.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="3.023709">
+        <testcase name="testconnectionestablish" class="Connection" classname="Connection" file="C:\Users\zakar\OneDrive\Desktop\LST-GI\TEST1\TEST\Connection.php" line="12" assertions="4" time="3.023709"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Test3" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.825059">
+      <testsuite name="Verification" file="C:\Users\zakar\OneDrive\Desktop\LST-GI\TEST1\TEST\Verification.php" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.825059">
+        <testcase name="testVerification" class="Verification" classname="Verification" file="C:\Users\zakar\OneDrive\Desktop\LST-GI\TEST1\TEST\Verification.php" line="12" assertions="5" time="0.825059">
+          <system-out>&#13;
+</system-out>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
