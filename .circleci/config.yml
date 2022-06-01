@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: 
           name: php mysql
-          command: apt-get install php7.3-mysql
+          command: find \ -name php.ini
       - run:
           name: Install system packages
           command: apt-get update && apt-get -y install git
