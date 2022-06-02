@@ -42,9 +42,13 @@ jobs:
             php -version
             # apt-get install wget
             # wget https://xdebug.org/files/binaries/dbgpClient
-      - run: 
-          name: generating phpunit reports
-          command: php vendor/bin/phpunit --log-junit phpunit.junit.xml --coverage-clover phpunit.coverage.xml ./TEST2/mainTest.php
+      - run:
+          name: "Coverage reports"
+          command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report ./TEST2/mainTest.php
+          environment:
+            XDEBUG_MODE: coverage
+      - store_artifacts:
+          path:  build/coverage-report
       - run:
           name: Run Unit tests
           command: |
