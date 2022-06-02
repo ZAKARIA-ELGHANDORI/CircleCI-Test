@@ -45,7 +45,7 @@ jobs:
            
       - run:
           name: "Coverage reports"
-          command: php vendor/bin/phpunit --coverage-html build/coverage-report ./TEST2/mainTest.php
+          command: php vendor/bin/phpunit --log-junit phpunit.junit.xml --coverage-clover phpunit.coverage.xml ./TEST2/mainTest.php
           environment:
             XDEBUG_MODE: coverage
       - store_artifacts:
