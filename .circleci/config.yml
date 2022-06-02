@@ -39,8 +39,9 @@ jobs:
       - run: 
           name: installing Xdebug for PHP
           command: |
-            apt-get install wget
-            wget https://xdebug.org/files/binaries/dbgpClient
+            php -version
+            # apt-get install wget
+            # wget https://xdebug.org/files/binaries/dbgpClient
       - run: 
           name: generating phpunit reports
           command: php vendor/bin/phpunit --log-junit phpunit.junit.xml --coverage-clover phpunit.coverage.xml ./TEST2/mainTest.php
