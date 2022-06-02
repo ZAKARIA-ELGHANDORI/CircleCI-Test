@@ -36,12 +36,13 @@ jobs:
       - run:
           name: Install project dependencies
           command: php composer.phar install
- 
+      - run: 
+          name: generating phpunit reports
+          command: php vendor/bin/phpunit --log-junit phpunit.junit.xml --coverage-clover phpunit.coverage.xml ./TEST2/mainTest.php
       - run:
           name: Run Unit tests
           command: |
            php vendor/bin/phpunit ./TEST2/mainTest.php
-           php vendor/bin/phpunit --log-junit phpunit.junit.xml --coverage-clover phpunit.coverage.xml ./TEST2/mainTest.php
       - sonarcloud/scan
 
 orbs:
