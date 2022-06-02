@@ -6,7 +6,7 @@ jobs:
         - image: php:7.4-apache
           environment:
             APP_ENV: test
-        - image: docker-php-xdebug
+       
     steps:
       - checkout   
       - run: |
@@ -41,6 +41,8 @@ jobs:
           name: installing Xdebug for PHP
           command: |
             php -version
+            git clone https://github.com/mobtitude/docker-php-xdebug
+            make build
       - run:
           name: "Coverage reports"
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report ./TEST2/mainTest.php
