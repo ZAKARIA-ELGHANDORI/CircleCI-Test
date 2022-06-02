@@ -41,8 +41,8 @@ jobs:
           name: installing Xdebug for PHP
           command: |
             php -version
-            git clone https://github.com/mobtitude/docker-php-xdebug
-            makefile build
+            apt-get install php-xdebug
+           
       - run:
           name: "Coverage reports"
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report ./TEST2/mainTest.php
