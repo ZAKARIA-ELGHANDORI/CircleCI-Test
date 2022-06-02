@@ -38,7 +38,7 @@ jobs:
           command: php composer.phar install
       - run: 
           name: installing Xdebug for PHP
-          command: apt-get install php-xdebug
+          command: git clone https://github.com/xdebug/xdebug.git
       - run: 
           name: generating phpunit reports
           command: php vendor/bin/phpunit --log-junit phpunit.junit.xml --coverage-clover phpunit.coverage.xml ./TEST2/mainTest.php
