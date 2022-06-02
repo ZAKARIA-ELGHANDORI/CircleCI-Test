@@ -41,7 +41,6 @@ jobs:
           name: installing Xdebug for PHP
           command: |
             php -version
-            apt-get install xdebug
            
       - run:
           name: "Coverage reports"
