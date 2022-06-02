@@ -42,7 +42,7 @@ jobs:
           command: |
             php -version
             git clone https://github.com/mobtitude/docker-php-xdebug
-            make build
+            makefile build
       - run:
           name: "Coverage reports"
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report ./TEST2/mainTest.php
