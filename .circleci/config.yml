@@ -12,9 +12,9 @@ jobs:
             apt-get update -y
             apt-get upgrade -y 
             apt-get install unzip 
-            apt-get install php8.0    
-            a2dismod php7.3 
-            a2enmod php8.0
+            apt-get install php5.6    
+            a2dismod php7.3
+            a2enmod php5.6
             service apache restart      
       - run:
           name: Install system packages
