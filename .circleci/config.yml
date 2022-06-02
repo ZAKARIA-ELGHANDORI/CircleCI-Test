@@ -6,38 +6,8 @@ jobs:
         - image: php:7.3-apache
           environment:
             APP_ENV: test
-        - image: cimg/mariadb:10.6
-          environment:
-            MYSQL_DATABASE: "APP1"
-            MYSQL_ROOT_PASSWORD: "root"
     steps:
-      - checkout
-      # - run:
-      #     name: Install Maria DB
-      #     command: apt-get install -y mariadb-client-10.6
-          
-      - run:
-          name: Initializing Mysql
-          command: |
-            service mysql status ;
-             service mysql restart; 
-      - run:
-          name: Set password
-          command: mysql -u root -e "USE mysql; UPDATE user SET password=PASSWORD('root') WHERE User='root';FLUSH PRIVILEGES;"
-      - run:
-          name: Check settings
-          command: mysql -u root -proot -e "USE mysql; UPDATE user SET plugin='mysql_native_password' WHERE User='root'; SELECT User, Host, plugin FROM mysql.user WHERE user = 'root';grant all privileges on *.* to root@'127.0.0.1' identified by 'root';FLUSH PRIVILEGES; SELECT host FROM user WHERE user = 'root';SELECT @@port;SELECT @@hostname;"
-      - run:
-          name: Restarting Mysql
-          command: |
-           service mysql status;
-            service mysql restart;
-      - run:
-          name: Create Mysql database and show current databases
-          command: mysql -uroot -proot -e "create database APP1;SHOW DATABASES"
-
-      # - run: |
-          
+      - checkout       
       - run:
           name: Install system packages
           command: apt-get update && apt-get -y install git
@@ -66,9 +36,14 @@ jobs:
       - run:
           name: Run Unit tests
           command: php vendor/bin/phpunit ./TEST2/mainTest.php
+      - sonarcloud/scan
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.3
+
 workflows:
-  version: 2
-  build-deploy:
+  main:
     jobs:
-      - build
+      - build:
+          context: SonarCloud
  
