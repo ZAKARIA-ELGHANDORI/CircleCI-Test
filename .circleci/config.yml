@@ -37,10 +37,11 @@ jobs:
       - run:
           name: Install project dependencies
           command: php composer.phar install
-      - run: 
-          name: installing Xdebug for PHP
+      - run:
+          name: Enable PCOV
           command: |
-            php -version
+              pecl install pcov
+              docker-php-ext-enable pcov
            
       - run:
           name: "Coverage reports"
